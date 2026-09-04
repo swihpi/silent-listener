@@ -1,0 +1,23 @@
+{
+  "name": "silent-listener-windows",
+  "version": "0.1.0",
+  "description": "Text-only Windows companion for local or Gemini question answering.",
+  "main": "src/main.js",
+  "author": "Stefan W",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win nsis --x64"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.swi.silentlistener.windows",
+    "productName": "Silent Listener",
+    "files": ["src/**/*", "package.json"],
+    "win": { "target": [{ "target": "nsis", "arch": ["x64"] }] },
+    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true }
+  }
+}
